@@ -28,9 +28,8 @@ class VideoCallsController < ApplicationController
   end
 
   def show
-    qr = ::RQRCode::QRCode.new("https://kyan.com")
-    puts qr.to_s
     @video_call = VideoCall.find_by!(uuid: params[:uuid])
+    @qr = generate_qr_code(@video_call)
     @token = Vonage.video.generate_client_token(session_id: @video_call.session_id) if session[:participant_name].present?
   end
 
@@ -45,5 +44,11 @@ class VideoCallsController < ApplicationController
 
   def video_call_params
     params.require(:video_call).permit(:name)
+  end
+
+  def generate_qr_code(video_call)
+    RQRCode::QRCode.new(
+      "#{ENV['SITE_URL']}/video_calls/#{video_call.uuid}",
+    ).as_svg
   end
 end

@@ -8,3 +8,4 @@
   <%= tag.div id: "room-container", data: { action:"turbo:frame-render->join-room#connect" } %>
 <% end %>
 <%= link_to 'Leave video call', root_path, class: 'button alert' %>
+<%= raw(@qr.html_safe) %>
