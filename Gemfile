@@ -61,3 +61,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "vonage_rails", "~> 1.2"
+gem "dotenv-rails", "~> 3.1"
+
+gem "rqrcode", "~> 2.2"

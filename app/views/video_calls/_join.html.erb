@@ -1,0 +1,5 @@
+<%= form_with url: join_video_call_path(@video_call) do |form| %>
+  <%= form.label :name, "Your Name" %>
+  <%= form.text_field :participant_name %>
+  <%= form.submit 'Join Video Call' %>
+<% end %>

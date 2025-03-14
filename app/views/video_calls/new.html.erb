@@ -1,0 +1,7 @@
+<h1>New Video Call</h1>
+<p>Start a new video call.</p>
+<%= form_with model: @video_call do |form| %>
+  <%= form.label :name, "Room Name" %>
+  <%= form.text_field :name %>
+  <%= form.submit 'Create Video Call' %>
+<% end %>

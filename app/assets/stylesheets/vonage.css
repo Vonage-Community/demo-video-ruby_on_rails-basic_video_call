@@ -1,0 +1,17 @@
+#room-container {
+  width: 100vw;
+  height: calc(80vh);
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+#room-container > .OT_publisher {
+  position: absolute;
+  border-radius: 10px;
+}
+
+mark.alert {
+  background-color: #f15656;
+  color: #ffffff;
+}
