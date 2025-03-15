@@ -1,0 +1,11 @@
+<span data-controller="dialog" data-action="click->dialog#backdropClose">
+  <dialog data-dialog-target="dialog">
+    <div class="qr-code">
+      <%= raw(@qr.html_safe) %>
+    </div>
+    <p>Scan the QR code to join the video call.</p>
+    <button type="button" data-action="dialog#close" autofocus>Close</button>
+  </dialog>
+
+  <button type="button" data-action="dialog#open" class='action'>Show QR Code</button>
+</span>

@@ -8,8 +8,8 @@
   } do %>
   <%= tag.div id: "room-container" %>
   <% if authenticated? %>
-    <button data-action="click->video-room#end">End Call</button>
+    <%= render "dialog" %>
+    <button class='alert' data-action="click->video-room#end">End Call</button>
   <% end %>
 <% end %>
-<%= link_to 'Leave video call', outro_path, class: 'button alert' %>
-<%= raw(@qr.html_safe) %>
+<%= link_to 'Leave video call', outro_path, class: 'button' %>

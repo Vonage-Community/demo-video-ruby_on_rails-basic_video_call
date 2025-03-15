@@ -1,6 +1,6 @@
 #room-container {
   width: 100vw;
-  height: calc(80vh);
+  height: calc(65vh);
   position: relative;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -13,5 +13,29 @@
 
 mark.alert {
   background-color: #f15656;
+  color: #ffffff;
+}
+
+button.action {
+  background-color: #566df1;
+  border-color: #566df1;
+  color: #ffffff;
+}
+
+button.action:hover {
+  background-color: #0528f0;
+  border-color: #0528f0;
+  color: #ffffff;
+}
+
+button.alert {
+  background-color: #f15656;
+  border-color: #f15656;
+  color: #ffffff;
+}
+
+button.alert:hover {
+  background-color: #f00c0c;
+  border-color: #f00c0c;
   color: #ffffff;
 }
