@@ -1,4 +1,6 @@
 class VideoCallsController < ApplicationController
+  allow_unauthenticated_access except: %i[ new create end_call ]
+
   def new
     @video_call = VideoCall.new
   end

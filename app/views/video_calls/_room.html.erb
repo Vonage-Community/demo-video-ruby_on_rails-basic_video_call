@@ -7,7 +7,9 @@
     video_room_token_value: @token 
   } do %>
   <%= tag.div id: "room-container" %>
-  <button data-action="click->video-room#end">End Call</button>
+  <% if authenticated? %>
+    <button data-action="click->video-room#end">End Call</button>
+  <% end %>
 <% end %>
 <%= link_to 'Leave video call', outro_path, class: 'button alert' %>
 <%= raw(@qr.html_safe) %>
