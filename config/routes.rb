@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   # Defines the root path route ("/")
-  root "homepage#show"
+  root "pages#home"
+  get "/outro", to: "pages#outro"
+
 
   resources :video_calls, only: [:new, :create, :show], param: :uuid do
     member do
       post :join
+      post :end_call
     end
   end
 end

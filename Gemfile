@@ -66,3 +66,7 @@ gem "vonage_rails", "~> 1.2"
 gem "dotenv-rails", "~> 3.1"
 
 gem "rqrcode", "~> 2.2"
+
+gem "requestjs-rails", "~> 0.0.12"
+
+gem "pry", "~> 0.15.2", :group => :development

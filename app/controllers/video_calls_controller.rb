@@ -29,6 +29,12 @@ class VideoCallsController < ApplicationController
 
   def show
     @video_call = VideoCall.find_by!(uuid: params[:uuid])
+
+    unless @video_call && @video_call.active?
+      render 'video_calls/not_found', status: :not_found
+      return 
+    end
+
     @qr = generate_qr_code(@video_call)
     @token = Vonage.video.generate_client_token(session_id: @video_call.session_id) if session[:participant_name].present?
   end
@@ -38,6 +44,15 @@ class VideoCallsController < ApplicationController
     session[:participant_name] = params[:participant_name]
   
     redirect_to @video_call
+  end
+
+  def end_call
+    video_call = VideoCall.find_by(uuid: params[:uuid])
+    participants = params[:participants]
+    
+    video_call.update!(status: 'ended')
+    disconnect_participants(video_call, participants) if participants
+    head :no_content
   end
 
   private
@@ -50,5 +65,15 @@ class VideoCallsController < ApplicationController
     RQRCode::QRCode.new(
       "#{ENV['SITE_URL']}/video_calls/#{video_call.uuid}",
     ).as_svg
+  end
+
+  def disconnect_participants(video_call, participants)
+    participants.keys.each do |participant_id|
+      begin
+        Vonage.video.moderation.force_disconnect(session_id: video_call.session_id, connection_id: participant_id)
+      rescue => error
+        logger.info(error)
+      end
+    end
   end
 end

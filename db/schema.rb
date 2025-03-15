@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_14_111737) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_15_145159) do
   create_table "video_calls", force: :cascade do |t|
     t.string "name"
     t.string "session_id"
@@ -18,5 +18,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_14_111737) do
     t.string "application_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "active"
   end
 end

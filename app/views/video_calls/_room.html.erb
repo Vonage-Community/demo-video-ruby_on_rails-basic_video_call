@@ -1,11 +1,13 @@
 <%= turbo_frame_tag 'room', data: {
-    controller: "join-room",
-    join_room_api_key_value: @video_call.application_id,
-    join_room_session_id_value: @video_call.session_id,
-    join_room_participant_name_value: session[:participant_name],
-    join_room_token_value: @token 
+    controller: "video-room",
+    video_room_api_key_value: @video_call.application_id,
+    video_room_session_id_value: @video_call.session_id,
+    video_room_uuid_value: @video_call.uuid,
+    video_room_participant_name_value: session[:participant_name],
+    video_room_token_value: @token 
   } do %>
-  <%= tag.div id: "room-container", data: { action:"turbo:frame-render->join-room#connect" } %>
+  <%= tag.div id: "room-container" %>
+  <button data-action="click->video-room#end">End Call</button>
 <% end %>
-<%= link_to 'Leave video call', root_path, class: 'button alert' %>
+<%= link_to 'Leave video call', outro_path, class: 'button alert' %>
 <%= raw(@qr.html_safe) %>
