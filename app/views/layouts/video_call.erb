@@ -23,30 +23,8 @@
   </head>
 
   <body>
-    <header>
-      <div class="header-container">
-        <div>
-          <a href="/">
-            <picture>
-              <source srcset="/img/VonageLogo_Primary_White.png" media="(prefers-color-scheme:dark)">
-              <img src="/img/VonageLogo_Primary_Black.png" alt="Vonage logo">
-            </picture>
-          </a>
-        </div>
-        <div>
-          <blockquote>
-            <p>Code that connects you with anyone, anywhere and anytime.</p>
-          </blockquote>
-        </div>
-      </div>
-    </header>
     <main>
       <%= yield %>
     </main>
-    <footer>
-      <% if authenticated? %>
-        <%= button_to "Sign Out", session_path, method: :delete  %></li>
-      <% end %>
-    </footer>
   </body>
 </html>

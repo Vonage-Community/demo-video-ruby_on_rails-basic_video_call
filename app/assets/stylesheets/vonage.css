@@ -17,25 +17,40 @@ mark.alert {
 }
 
 button.action {
-  background-color: #566df1;
-  border-color: #566df1;
+  background-color: #6f539f;
+  border-color: #6f539f;
   color: #ffffff;
 }
 
 button.action:hover {
-  background-color: #0528f0;
-  border-color: #0528f0;
+  background-color: #8574a3;
+  border-color: #8574a3;
   color: #ffffff;
 }
 
 button.alert {
-  background-color: #f15656;
-  border-color: #f15656;
+  background-color: #d42d90;
+  border-color: #d42d90;
   color: #ffffff;
 }
 
 button.alert:hover {
-  background-color: #f00c0c;
-  border-color: #f00c0c;
+  background-color: #d471ad;
+  border-color: #d471ad;
   color: #ffffff;
+}
+
+.header-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header-container picture {
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+:root {
+  --accent: #7FC5EA;
 }

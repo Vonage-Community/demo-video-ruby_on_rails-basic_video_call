@@ -30,7 +30,7 @@ class VideoCallsController < ApplicationController
   end
 
   def show
-    @video_call = VideoCall.find_by!(uuid: params[:uuid])
+    @video_call = VideoCall.find_by(uuid: params[:uuid])
 
     unless @video_call && @video_call.active?
       render 'video_calls/not_found', status: :not_found
@@ -39,6 +39,7 @@ class VideoCallsController < ApplicationController
 
     @qr = generate_qr_code(@video_call)
     @token = Vonage.video.generate_client_token(session_id: @video_call.session_id) if session[:participant_name].present?
+    render layout: 'video_call'
   end
 
   def join
