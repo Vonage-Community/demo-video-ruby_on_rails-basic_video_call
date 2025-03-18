@@ -1,0 +1,12 @@
+<h1>Admin</h1>
+<p>Total video calls: <%= @video_calls.count %></p>
+<ul>
+  <% @video_calls.each do |video_call| %>
+    <li>
+      <%= video_call.name %> | 
+      <%= video_call.uuid %> | 
+      <%= link_to 'View', video_call_path(video_call) %> | 
+      <%= video_call.status %>
+    </li>
+  <% end %>
+</ul>

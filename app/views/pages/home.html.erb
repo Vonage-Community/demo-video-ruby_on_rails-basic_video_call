@@ -1,6 +1,4 @@
-<h1>Vonage Video Demo</h1>
+<h1>Vonage Video API Demo</h1>
 <img src="/img/Voyagers_Meet-the-Voyagers.png" alt="Vonage Voyagers: Meet the Voyagers">
 <p>This is a demo showing a basic implementation of the <a href="https://developer.vonage.com/en/video/overview" target="_blank">Vonage Video API</a> which creates a new video call and provides the ability to join the call via a link encoded as a QR code.</p>
-<% if authenticated? %>
-  <%= link_to 'Start the demo', new_video_call_path, class: 'button' %>
-<% end %>
+<%= link_to 'Start the demo', new_video_call_path, class: 'button' %>

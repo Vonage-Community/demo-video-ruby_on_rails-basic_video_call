@@ -1,6 +1,10 @@
 class VideoCallsController < ApplicationController
-  allow_unauthenticated_access except: %i[ new create end_call ]
+  allow_unauthenticated_access except: %i[ index new create end_call ]
 
+  def index
+    @video_calls = VideoCall.all.order(:status)
+  end
+  
   def new
     @video_call = VideoCall.new
   end

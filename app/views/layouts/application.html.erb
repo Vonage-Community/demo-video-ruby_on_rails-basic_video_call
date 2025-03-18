@@ -46,6 +46,7 @@
     <footer>
       <% if authenticated? %>
         <%= button_to "Sign Out", session_path, method: :delete  %></li>
+        <%= link_to "Admin", video_calls_path %>
       <% end %>
     </footer>
   </body>

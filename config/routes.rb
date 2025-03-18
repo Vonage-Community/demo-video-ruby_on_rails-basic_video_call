@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/outro", to: "pages#outro"
 
 
-  resources :video_calls, only: [:new, :create, :show], param: :uuid do
+  resources :video_calls, only: [:index, :new, :create, :show], param: :uuid do
     member do
       post :join
       post :end_call
