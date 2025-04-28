@@ -65,7 +65,7 @@ end
 gem "vonage_rails", "~> 1.2"
 gem "dotenv-rails", "~> 3.1"
 
-gem "rqrcode", "~> 2.2"
+gem "rqrcode", "~> 3.1"
 
 gem "requestjs-rails", "~> 0.0.12"
 
